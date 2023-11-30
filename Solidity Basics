@@ -1,1 +1,37 @@
 State Variables
+Certainly! The code snippet provided involves the creation of a Zombie struct, an array to store instances of the Zombie struct, and a function createZombie to add new Zombies to the array in Solidity.
+
+1. Zombie Struct Definition:
+A struct in Solidity is a user-defined data structure that can hold multiple variables of different types. In this case, the Zombie struct is defined with two properties:
+
+solidity
+Copy code
+struct Zombie {
+    string name;
+    uint dna;
+}
+Zombie is defined to have two properties: name (a string) and dna (an unsigned integer).
+This structure allows you to create instances of Zombies, each containing a name and a unique DNA.
+2. Zombies Array:
+An array named zombies is declared to store instances of the Zombie struct:
+
+solidity
+Copy code
+Zombie[] public zombies;
+zombies is an array that holds instances of the Zombie struct.
+The public visibility specifier allows other contracts or external callers to read the data stored in this array.
+3. createZombie Function:
+The createZombie function is used to create a new Zombie and add it to the zombies array:
+
+solidity
+Copy code
+function createZombie(string memory _name, uint _dna) public {
+    zombies.push(Zombie(_name, _dna));
+}
+createZombie is a public function that takes two arguments: _name (a string) and _dna (an unsigned integer).
+Inside the function, a new Zombie instance is created using _name and _dna.
+This new Zombie instance is added to the zombies array using the push method.
+Summary:
+The provided code defines a Zombie struct with name and dna properties, an array zombies to hold instances of this struct, and a function createZombie to create new Zombies by specifying their names and DNA and adding them to the zombies array in Solidity.
+
+User
